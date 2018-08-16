@@ -6,8 +6,8 @@ public class ArrayListVsLinkedListPerformance {
     public static void main(String[] args) {
         long totalElapsedTimeA = 0L;
         long totalElapsedTimeL = 0L;
-        int startSize = 10000;
-        int position = 9998;
+        int startSize = 100;
+        int position = 1;
         int element = 5;
         int attempts = 100000;
         //************ add element to index
@@ -126,5 +126,31 @@ public class ArrayListVsLinkedListPerformance {
             totalElapsedTimeL4 += elapsedTimeL4;
         }
         System.out.println("LinkedList add sequence to start = " + totalElapsedTimeL4);
+        //*********************** add element to end
+        long totalElapsedTimeA5 = 0;
+        ArrayList<Integer> arrayList5 = new ArrayList<>();
+        for (int j = 0; j < startSize; j++) {
+            arrayList4.add(j);
+        }
+        for (int i = 0; i < attempts; i++) {
+            long startA5 = System.nanoTime();
+            arrayList5.add(arrayList5.size(), element);
+            long elapsedTimeA5 = System.nanoTime() - startA5;
+            totalElapsedTimeA5 += elapsedTimeA5;
+        }
+        System.out.println("ArrayList add element to end =  " + totalElapsedTimeA5);
+        //**
+        long totalElapsedTimeL5 = 0;
+        LinkedList<Integer> linkedList5 = new LinkedList<>();
+        for (int j = 0; j < startSize; j++) {
+            linkedList5.add(j);
+        }
+        for (int i = 0; i < attempts; i++) {
+            long startL5 = System.nanoTime();
+            linkedList5.addLast(element);
+            long elapsedTimeL5 = System.nanoTime() - startL5;
+            totalElapsedTimeL5 += elapsedTimeL5;
+        }
+        System.out.println("LinkedList add element to end = " + totalElapsedTimeL5);
     }
 }
