@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-/**
- * Created by Grygorii Shemelin on 16-Aug-18
- */
 public class ArrayListVsLinkedListPerformance {
     public static void main(String[] args) {
         long totalElapsedTimeA = 0L;
