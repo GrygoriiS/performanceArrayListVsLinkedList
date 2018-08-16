@@ -130,7 +130,7 @@ public class ArrayListVsLinkedListPerformance {
         long totalElapsedTimeA5 = 0;
         ArrayList<Integer> arrayList5 = new ArrayList<>();
         for (int j = 0; j < startSize; j++) {
-            arrayList4.add(j);
+            arrayList5.add(j);
         }
         for (int i = 0; i < attempts; i++) {
             long startA5 = System.nanoTime();
